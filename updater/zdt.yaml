@@ -101,6 +101,8 @@ actions:
 
    waitConnections:
      - cmd [${this.id}]: nscd -i hosts; curl --silent ftp://ftp.jelastic.com/pub/tools/test.sh > /tmp/test.sh  && chmod +x /tmp/test.sh &&  /tmp/test.sh --command check_connenctions
+       user: root
 
    waitRun:
      - cmd [${this.id}]: nscd -i hosts; curl --silent ftp://ftp.jelastic.com/pub/tools/test.sh > /tmp/test.sh  && chmod +x /tmp/test.sh &&  /tmp/test.sh --command  check_run --url "${this.path}"
+       user: root
